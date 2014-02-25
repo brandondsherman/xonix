@@ -4,5 +4,6 @@ public abstract class Moveable extends GameWorldObjects{
 	
 	public abstract int getHeading() ;
 	public abstract int getSpeed() ;
-	public abstract void setLocation(float x, float y) ;	
+	public abstract void setLocation(float x, float y) ;
+	public abstract void move() ;	
 }

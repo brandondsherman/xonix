@@ -76,6 +76,22 @@ public class MonsterBall {
 	int newRadius = getRadius();
 	return "Ball: loc=" + newLocation + "," + newLocation2 + "  color=[" + red+ "," + green + "," + blue + "]  speed=" + newSpeed + "  heading=" + newHeading + "  radius=" + newRadius;
 	}
+
+	public void move() {
+		float newX = getLocationX();		 /////////////////////
+		float newY = getLocationY();		 //
+		int newSpeed = getSpeed();  		 //  needed 
+		int degrees = getHeading(); 		 //  new
+		degrees = 90 - degrees; //finish degrees //  variables
+		double theta = Math.toRadians(degrees);  //
+		float deltaX = (float)Math.cos(theta);   //
+		float deltaY = (float)Math.sin(theta);   /////////////////////
+		deltaX = deltaX*newSpeed;//finish deltaX 
+		deltaY = deltaY*newSpeed;//finish deltaY 
+		newX = newX + deltaX; //final new x location
+		newY = newY + deltaY; //final new y location
+		setLocation(newX,newY); //updates objects location variable
+	}
 }
 
 
