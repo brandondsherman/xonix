@@ -1,4 +1,6 @@
-public class Car extends Moveable implements Steerable{
+import java.awt.Color;
+
+public class Car /*extends Moveable implements Steerable*/{
 	private int width;
 	private int height;
 	private int heading;
@@ -7,7 +9,16 @@ public class Car extends Moveable implements Steerable{
 	private Color color;
 
 	public Car(){
-
+		width = 5;
+		height = 10;
+		heading = 0;
+		speed = 10;
+		location[0] = 247.5f;
+		location[1] = 2.5f;
+		int r = 255;
+		int g = 0;
+		int b = 0;
+		color = new Color(r,g,b);
 	}
 	
 	public int getWidth() {
@@ -26,8 +37,14 @@ public class Car extends Moveable implements Steerable{
 		return speed;
 	}
 
-	public float[] getLocation() {
-		return location;
+	public float getLocationX() {
+		float x = location[0];
+		return x;
+	}
+
+	public float getLocationY() {
+		float y = location[1];
+		return y;
 	}
 
 	public Color getColor() {
@@ -39,7 +56,8 @@ public class Car extends Moveable implements Steerable{
 	}
 
 	public void setLocation(float x, float y) {
-		location = [x,y];
+		location[0] = x;
+		location[1] = y;
 	}
 
 	public void setColor(int r, int g, int b) {
@@ -51,7 +69,16 @@ public class Car extends Moveable implements Steerable{
 	}
 
 	public String toString() {
-	return "Car: loc=" + this.getLocation()[0] + "," + this.getLocation()[1]
-+ "  color=" + this.getColor() + "  speed=" + this.getSpeed() + "  heading=" + this.getHeading() + "  width=" + this.getWidth() + "  height=" + this.getHeight();
+	float newLocation = getLocationX();
+	float newLocation2 = getLocationY();
+	int red = color.getRed();
+	int green = color.getGreen();
+	int blue = color.getBlue();
+	int newSpeed = getSpeed();
+	int newHeading = getHeading();
+	int newHeight = getHeight();
+	int newWidth = getWidth();
+	return "Ball: loc=" + newLocation + "," + newLocation2 + "  color=[" + red+ "," + green + "," + blue + "]  speed=" + newSpeed + "  heading=" + newHeading + "  width=" + newWidth + "  height=" + newHeight;
 	}
+
 }

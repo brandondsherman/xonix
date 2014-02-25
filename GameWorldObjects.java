@@ -1,10 +1,8 @@
-include java.awt.Color
 
 public abstract class GameWorldObjects {
-	private float location[2];
-	private Color color;
+	private float[] location = new float[2];
 
-	public float[] getLocation() ;
-	public Color getColor() ;	
-	public String toString();
+	public abstract float getLocationY() ;
+	public abstract float getLocationX() ;	
+	public abstract String toString();
 }

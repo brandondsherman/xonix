@@ -1,3 +1,3 @@
-public abstract Fixed {
-	public String toString() ;		
+public abstract class Fixed extends GameWorldObjects{
+	public abstract String toString() ;		
 }
