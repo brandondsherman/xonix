@@ -1,11 +1,13 @@
+import java.util.Vector;
+
 public class GameWorld implements Collection {
 	private Vector theObjects;
 
 	public GameWorld() {
-		theObjects = new vector ();
+		theObjects = new Vector ();
 	}
 	
-	public void add(GameWorldObjects newObject) {
+	public void add(Object newObject) {
 		theObjects.addElement(newObject);
 	}
 
@@ -16,20 +18,20 @@ public class GameWorld implements Collection {
 	private class GameWorldIterator implements Iterator {
 		private int currElementIndex;
 		
-		public SpaceVectorIterator() {
+		public GameWorldIterator() {
 			currElementIndex = -1;
 		}
 
 		public boolean hasNext() {
 			if (theObjects.size() <= 0) 
 				return false;
-			if(currElementIndex == theCollection.size() -1)
+			if(currElementIndex == theObjects.size() -1)
 				return false;
 			return true;
 		}
-		public object getNext() {
+		public Object getNext() {
 			currElementIndex ++;
-			return(theCollection.elementAt(currElementIndex));
+			return theObjects.elementAt(currElementIndex);
 		}
 	}
 }

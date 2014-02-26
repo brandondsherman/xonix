@@ -10,6 +10,7 @@ public class MonsterBall {
 	private Random myRNG = new Random(); /*myRNG.nextInt(255) or myRNG.nextFloat() * (maxX - minX) + minX*/
 	
 	public MonsterBall(){
+		radius = myRNG.nextInt(50);
 		heading = myRNG.nextInt(359); //int between 0-359
 		int tempSpeed = myRNG.nextInt(24); //int between 0-24
 		tempSpeed = tempSpeed + 1;//int between 1-25
@@ -92,6 +93,22 @@ public class MonsterBall {
 		newY = newY + deltaY; //final new y location
 		setLocation(newX,newY); //updates objects location variable
 	}
+/*
+public static void main(String[] args){
+	MonsterBall myBallSac = new MonsterBall();
+	Car myCar = new Car();
+	TimeTicket myTT = new TimeTicket();
+
+	System.out.println(myBallSac.toString());
+	myBallSac.move();
+	System.out.println(myBallSac.toString());
+
+	System.out.println(myCar.toString());
+	myCar.move();
+	System.out.println(myCar.toString());
+
+	System.out.println(myTT.toString());
+}*/
 }
 
 

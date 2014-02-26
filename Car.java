@@ -8,7 +8,17 @@ public class Car /*extends Moveable implements Steerable*/{
 	private float[] location = new float[2];
 	private Color color;
 
-	public Car(){
+	//Make Car a Singleton
+
+	private static Car theCar; //global reference to theCar
+
+	public static synchronized Car getCar(){ //make a car if it didnt exist already
+		if (theCar == null)
+			theCar = new Car();
+		return theCar;
+	}
+
+	private Car(){ //private so it can only get called in class
 		width = 5;
 		height = 10;
 		heading = 0;
@@ -20,6 +30,7 @@ public class Car /*extends Moveable implements Steerable*/{
 		int b = 0;
 		color = new Color(r,g,b);
 	}
+	//Is now a Singleton
 	
 	public int getWidth() {
 		return width;
@@ -78,7 +89,25 @@ public class Car /*extends Moveable implements Steerable*/{
 	int newHeading = getHeading();
 	int newHeight = getHeight();
 	int newWidth = getWidth();
-	return "Ball: loc=" + newLocation + "," + newLocation2 + "  color=[" + red+ "," + green + "," + blue + "]  speed=" + newSpeed + "  heading=" + newHeading + "  width=" + newWidth + "  height=" + newHeight;
+	return "Car: loc=" + newLocation + "," + newLocation2 + "  color=[" + red+ "," + green + "," + blue + "]  speed=" + newSpeed + "  heading=" + newHeading + "  width=" + newWidth + "  height=" + newHeight;
 	}
+
+	public void move() {
+		float newX = getLocationX();		 /////////////////////
+		float newY = getLocationY();		 //
+		int newSpeed = getSpeed();  		 //  needed 
+		int degrees = getHeading(); 		 //  new
+		degrees = 90 - degrees; //finish degrees //  variables
+		double theta = Math.toRadians(degrees);  //
+		float deltaX = (float)Math.cos(theta);   //
+		float deltaY = (float)Math.sin(theta);   /////////////////////
+		deltaX = deltaX*newSpeed;//finish deltaX 
+		deltaY = deltaY*newSpeed;//finish deltaY 
+		newX = newX + deltaX; //final new x location
+		newY = newY + deltaY; //final new y location
+		setLocation(newX,newY); //updates objects location variable
+	}
+	
+
 
 }
