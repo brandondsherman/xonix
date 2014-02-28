@@ -1,5 +1,6 @@
-public class FieldSquare extends Fixed {
-	private int Square;
+package a1;
+public class FieldSquare /*extends Fixed*/ {
+/*	private int Square;
 	private boolean owned;
 	private Color myColor;
 	private float[] location = new float[2];
@@ -38,5 +39,5 @@ public class FieldSquare extends Fixed {
 	
 	public String toString(){
 	return "FieldSquare: loc=" + this.getLocation()[0] + "," + this.getLocation()[1] + "  color=" + this.getColor() + "  owned=" + this.getOwned() "  width=" + this.getWidth() + "  height=" + this.getHeight();
-	}
+	}*/
 }

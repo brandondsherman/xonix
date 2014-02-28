@@ -1,4 +1,4 @@
-
+package a1;
 public abstract class GameWorldObjects {
 	private float[] location = new float[2];
 

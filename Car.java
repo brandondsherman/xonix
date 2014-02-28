@@ -1,4 +1,6 @@
+package a1;
 import java.awt.Color;
+
 
 public class Car /*extends Moveable implements Steerable*/{
 	private int width;
@@ -10,9 +12,9 @@ public class Car /*extends Moveable implements Steerable*/{
 
 	//Make Car a Singleton
 
-	private static Car theCar; //global reference to theCar
+	private static Car theCar = null; //global reference to theCar
 
-	public static synchronized Car getCar(){ //make a car if it didnt exist already
+	public static synchronized Car theCar(){ //make a car if it didnt exist already
 		if (theCar == null)
 			theCar = new Car();
 		return theCar;
@@ -31,6 +33,10 @@ public class Car /*extends Moveable implements Steerable*/{
 		color = new Color(r,g,b);
 	}
 	//Is now a Singleton
+	
+	public void gotoStart(){
+		setLocation(247.5f, 2.5f);
+	}//end of gotoStart()
 	
 	public int getWidth() {
 		return width;

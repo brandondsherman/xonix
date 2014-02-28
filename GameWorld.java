@@ -1,3 +1,4 @@
+package a1;
 import java.util.Vector;
 
 public class GameWorld implements Collection {
@@ -5,6 +6,7 @@ public class GameWorld implements Collection {
 
 	public GameWorld() {
 		theObjects = new Vector ();
+		theObjects.add(new getCar());
 	}
 	
 	public void add(Object newObject) {
